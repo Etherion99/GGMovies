@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "docker:build": "docker-compose build",
     "docker:start": " docker-compose up",
+    "docker:run": "rm -rf .meteor\\local && meteor run --port 3000 --allow-superuser",
     "docker:build-start": "docker-compose build && docker-compose up"
   },
   "dependencies": {
