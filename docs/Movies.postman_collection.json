@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "c6ab86ab-ad2c-46ea-9b68-4fc3da9896d5",
+		"name": "Movies",
+		"description": "**Key Features**:  \n**Create a Movie**:  \nThe Movies API allows effortless addition of new movies. Simply provide key details such as title, description, and viewing status.\n\n**List All Movies**:  \nMake browsing through our catalog a seamless experience. The API returns a JSON dataset covering all details of available movies.\n\n**Update a Movie**:  \nKeep information fresh. With the Movies API, updating the details of a movie is as simple as providing the unique ID and the updated details.\n\n**Toggle Viewing Status of a Movie**:  \nGrant users control over their preferences. The API facilitates updating the viewing status of a specific movie based on its unique ID.\n\n**Delete a Movie**:  \nSimplify catalog management. The Movies API allows the safe and efficient deletion of a specific movie based on its unique ID.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19883571"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Get movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/movies",
+						"description": "This endpoint returns all movies from the database when you make a GET request to \"/api/v1/movies.\""
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies sort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/movies/sortCreateAt",
+						"description": "This endpoint provides all movies from the database sorted by their creation date."
+					},
+					"response": []
+				},
+				{
+					"name": "Get movie",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/movies/vzoerFnniSmoPycvB",
+						"description": "This endpoint returns the details of a movie by providing its Id.  \n[http://localhost:3000/api/v1/movies/:id](http://localhost:3000/api/v1/movies/:id)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Create movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"title test postman 3\",\r\n    \"synopsis\":\r\n      \"synopsis test postman\",\r\n    \"image\":\r\n      \"https://cdn.europosters.eu/image/750/posters/iron-man-one-sheet-i3287.jpg\",\r\n    \"score\": 3.75,\r\n    \"platforms\": [\r\n      {\r\n        \"id\": \"3wJbAH6mht4E8jn4K\",\r\n        \"name\": \"netflix\",\r\n        \"logo\": \"https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png\",\r\n        \"addedAt\": 1702128114,\r\n        \"deletedAt\": 1702129114\r\n      },\r\n      {\r\n        \"id\": \"9dYF2rdWNsRjp3Jz5\",\r\n        \"name\": \"HBO Max\",\r\n        \"logo\": \"https://1000marcas.net/wp-content/uploads/2022/05/HBO-Max-Logo.png\",\r\n        \"addedAt\": 1702128114,\r\n        \"deletedAt\": 1702129114\r\n      }\r\n    ],\r\n    \"isWatched\": false,\r\n    \"reviews\": [\r\n      {\r\n        \"user\": \"user 1\",\r\n        \"description\": \"la mejor película que he visto\",\r\n        \"score\": 4,\r\n        \"createdAt\": \"2023-12-14T17:57:03.654Z\"\r\n      },\r\n      {\r\n        \"user\": \"user 2\",\r\n        \"description\": \"la peor película que he visto\",\r\n        \"score\": 2,\r\n        \"createdAt\": \"2023-12-14T17:57:03.654Z\"\r\n      },\r\n      {\r\n        \"user\": \"user 3\",\r\n        \"description\": \"no la volvería a ver\",\r\n        \"score\": 1,\r\n        \"createdAt\": \"2023-12-14T17:57:03.654Z\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/movie",
+						"description": "This endpoint enables the creation of a movie by sending an object in the request body, as illustrated below."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PATCH",
+			"item": [
+				{
+					"name": "Update movie",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"title test postman update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/movie/vzoerFnniSmoPycvB",
+						"description": "This endpoint allows the update of any attribute of a movie by providing its id."
+					},
+					"response": []
+				},
+				{
+					"name": "Set isWatched",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/movie/setIsWatched/mcJgPfug8iZvvTJNp",
+						"description": "This endpoint modifies the viewing status of a specific movie by updating the \"isWatched\" property using its id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "Delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/movie/vzoerFnniSmoPycvB",
+						"description": "This endpoint deletes a movie by providing its id."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
