@@ -26,6 +26,8 @@
 6. [Important Dependencies](#important-dependencies)
 7. [RESTful API](#restful-api)<br>
   7.1. [Endpoints](#endpoints)
+8. [Important Security and Integration Considerations](#important-security-and-integration-considerations)
+9. [Technical Test Comments](#technical-test-comments)
 
 ## Model
 The application model consists of 3 collections of documents: movies, platforms, and reviews. The reviews and platforms collections were added to enrich the model, but due to time constraints, they only have read endpoints in the API.
@@ -194,29 +196,29 @@ This API was developed in Express and is documented in [Postman](./docs/Movies.p
 
 * The `Meteor.bindEnvironment` function is being used in the movies service (movies.service) of an Express application with Meteor to manage Fiber context during asynchronous operations. In an Express application using Meteor, this approach ensures that asynchronous operations related to movies are properly bound to the Meteor execution environment. This is crucial when communicating with Meteor functions that depend on Fiber, preventing issues associated with the loss of execution context. In summary, by using `Meteor.bindEnvironment` in the movies service, it ensures the consistent and predictable execution of asynchronous operations within the Meteor environment, avoiding errors related to asynchrony.
 
-## comentarios de la prueba técnica
+## Technical Test Comments
 
-* La integración de Meteor con la API de Express para aprovechar la BD Mongo integrada en Meteor se realizó solo con fines demostrativos para poder cumplir los criterios de documentación de la API sin perder la oportunidad de implementar Meteor.
+* The integration of Meteor with the Express API to leverage the integrated Mongo DB in Meteor was done only for demonstrative purposes to meet the API documentation criteria without missing the opportunity to implement Meteor.
 
-* Las pruebas unitarias corren sobre los métodos de Meteor.
+* Unit tests run on Meteor methods.
 
-* El eslint está configurado sobre la API Express.
+* ESLint is configured for the Express API.
 
-* La API de Express se documentó con Postman y se adjuntó el collection [aquí](./docs/Movies.postman_collection.json).
+* The Express API was documented with Postman, and the collection was attached [here](./docs/Movies.postman_collection.json).
 
-* La Aplicación (incluyendo Meteor y Express) fue desplegada en conjunto sobre una máquina AWS [aquí]().
+* The application (including Meteor and Express) was deployed together on an AWS machine [here]().
 
-* La aplicación cuenta tanto con API como con una interfáz en React suficiente para probar un CRUD básico con las siguientes operaciones:
-  * listar películas
-  * listar plataformas
-  * agregar películas
-  * eliminar películas (hace falta un modal de confirmación de eliminación que se omite por motivos de tiempo)
-  * agregar reseñas (al agregarla los datos de agregado y eliminado se llenan de forma automática)
-  * marcar película como vista
-  * actualizar películas (solo disponible por API, aunque al marcarla como vista o agregar reseñas técnicamente se está actualizando).
+* The application has both an API and a React interface sufficient for testing basic CRUD operations with the following operations:
+  * List movies
+  * List platforms
+  * Add movies
+  * Delete movies (a deletion confirmation modal is missing due to time constraints)
+  * Add reviews (when added, the added and deleted data is automatically filled)
+  * Mark a movie as viewed
+  * Update movies (only available through the API, although marking it as viewed or adding reviews technically constitutes an update).
 
-* Para aprovechar al máximo el recorrido por la interfaz se reocmienda dar click en el poster de alguna película para ver más detalles sobre esta y utilizar el filtro de peliculas vistas en la parte superior de la interfaz.
+* To make the most of the interface experience, it is recommended to click on the poster of a movie to see more details about it and use the "Viewed Movies" filter at the top of the interface.
 
-* La primera vez que ejecutes la aplicación Meteor se llenará automáticamente la BD con datos de prueba, para volver a poblarla es necesario eliminar la BD de Mongo y volver a correr el proyecto (puedes ver la url de Mongo con el comnado `meteor mongo --url`).
+* The first time you run the Meteor application, the database will be automatically populated with test data. To repopulate it, it is necessary to delete the Mongo DB and rerun the project (you can view the Mongo URL with the command `meteor mongo --url`).
 
-* Por cuestión de tiempo la API de Express está resumida al modelo peícula unicamente pero dispone de una validación mediante esquemas con Joi.
+* Due to time constraints, the Express API is summarized to the movie model only but has validation using schemas with Joi.
