@@ -206,7 +206,7 @@ This API was developed in Express and is documented in [Postman](./docs/Movies.p
 
 * The Express API was documented with Postman, and the collection was attached [here](./docs/Movies.postman_collection.json).
 
-* The application (including Meteor and Express) was deployed together on an AWS machine [here]().
+* The application (including Meteor and Express) was deployed together on an AWS machine [here](https://sebastian-trujillo.me/ggmovies).
 
 * The application has both an API and a React interface sufficient for testing basic CRUD operations with the following operations:
   * List movies
