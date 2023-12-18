@@ -16,7 +16,7 @@ function AddReview({ onHide, visible }) {
 
   // Estados para los campos del formulario
   const [description, setDescription] = useState('');
-  const [score, setScore] = useState('');
+  const [score, setScore] = useState(1);
   const [user, setUser] = useState('');  
 
   // Crea una review utilizando los datos del formulario
@@ -48,7 +48,7 @@ function AddReview({ onHide, visible }) {
           headerTitle: { className: 'flex justify-content-center text-4xl' },
         }}
         draggable={false}
-        style={{ width: '80vw', height: '80vh' }}
+        style={{ width: '80vw' }}
         visible={visible}
         onHide={() => onHide(false)}
       >
@@ -74,18 +74,18 @@ function AddReview({ onHide, visible }) {
                   />
                 </div> 
                 <div className='p-field mt-3'>
-                  <label htmlFor='score'>Score</label>
+                  <label htmlFor='score'>Puntuación (entre 1 y 5)</label>
                   <InputNumber
                     id='score'
                     value={score}
                     onChange={(e) => setScore(e.value)}
-                    min={0}
+                    min={1}
                     max={5}
                     required
                   />
                 </div>
                 <div className='p-field mt-3'>
-                  <Button type='button' label='Guardar' onClick={create} />
+                  <Button type='button' label='Guardar' style={{ color: '#ffffff' }} onClick={create} />
                 </div>
               </div>
             </form>

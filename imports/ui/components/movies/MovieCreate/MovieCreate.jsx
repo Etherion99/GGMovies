@@ -23,7 +23,6 @@ function MovieCreate({ onHide, visible }) {
   const [title, setTitle] = useState('');
   const [synopsis, setSynopsis] = useState('');
   const [image, setImage] = useState('');
-  const [score, setScore] = useState(0);
   const [platformArray, setPlatformArray] = useState([]);
 
   // Agrega o quita un ID de plataforma al platformArray según su presencia
@@ -67,7 +66,7 @@ function MovieCreate({ onHide, visible }) {
           headerTitle: { className: 'flex justify-content-center text-4xl' },
         }}
         draggable={false}
-        style={{ width: '80vw', height: '80vh' }}
+        style={{ width: '80vw' }}
         visible={visible}
         onHide={() => onHide(false)}
       >
@@ -120,7 +119,7 @@ function MovieCreate({ onHide, visible }) {
                 ))}
 
                 <div className='p-field mt-3'>
-                  <Button type='button' label='Guardar' onClick={create} />
+                  <Button type='button' label='Guardar' style={{ color: '#ffffff' }} onClick={create} />
                 </div>
               </div>
             </form>
