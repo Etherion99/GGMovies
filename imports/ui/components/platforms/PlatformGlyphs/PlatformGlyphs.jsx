@@ -24,7 +24,6 @@ export const PlatformGlyphs = ({ activePlatforms }) => {
 
     // Fetch the platforms from the collection
     const platforms = PlatformsCollection.find().fetch();
-    console.log(platforms, activePlatforms);
     return { platforms, isLoading: false };
   });
 
