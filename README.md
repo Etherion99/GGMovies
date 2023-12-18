@@ -30,7 +30,7 @@
 9. [Technical Test Comments](#technical-test-comments)
 
 ## Model
-The application model consists of 3 collections of documents: movies, platforms, and reviews. The reviews and platforms collections were added to enrich the model, but due to time constraints, they only have read endpoints in the API.
+The application model consists of 3 collections of documents: movies, platforms, and reviews. The reviews and platforms collections were added to enrich the model, but due to time constraints, they only have read endpoints in the API. The reviews model is immersed in the collection of films while platforms is a particular case since it has its own collection with generic information about the platforms and at the same time specific data about the release of each film on each platform is immersed in the movie collection.
 
 
 ## Architecture
@@ -40,7 +40,7 @@ The core of the application is built in Meteor, taking advantage of its full-sta
 
 [<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/meteor-js-icon.png" height="30px" style="margin-right:10px">MeteorJS](https://www.meteor.com/)<br>
 
-[<img src="https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png" height="30px" style="margin-right:10px">Express.js](https://expressjs.com/)<br>
+[<img src="https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png" height="30px" style="margin-right:10px">Express.js](https://expressjs.com/)<br>
 
 [<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png" height="30px" style="margin-right:10px">NoSQL - MongoDB](https://www.mongodb.com/es)<br>
 
@@ -48,7 +48,7 @@ The core of the application is built in Meteor, taking advantage of its full-sta
 
 ### Styles and Components Libs
 
-[<img src="https://www.drupal.org/files/project-images/font_awesome_logo.png" height="30px" style="margin-right:10px">FontAwesome](https://fontawesome.com/)<br>
+[<img src="https://pbs.twimg.com/profile_images/1491038861224517637/s-H1KgWO_400x400.png" height="30px" style="margin-right:10px">FontAwesome](https://fontawesome.com/)<br>
 
 [<img src="https://i2.wp.com/www.primefaces.org/wp-content/uploads/2017/08/primereact-transparent.png?resize=250%2C250&ssl=1" height="30px" style="margin-right:10px">Primereact](https://primereact.org/)<br>
 
