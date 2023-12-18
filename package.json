@@ -2,11 +2,15 @@
   "name": "movies_ggtech",
   "private": true,
   "scripts": {
+    "build": "meteor build --directory dist",
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "docker:build": "docker-compose build",
+    "docker:start": " docker-compose up",
+    "docker:build-start": "docker-compose build && docker-compose up"
   },
   "dependencies": {
     "@babel/runtime": "7.20.7",
