@@ -4,6 +4,8 @@ import '/imports/api/MoviesPublications';
 import '/imports/api/PlatformsPublications';
 import { MoviesCollection } from '/imports/db/MoviesCollection';
 import { PlatformsCollection } from '/imports/db/PlatformCollection';
+import { app } from '/express';
+import { WebApp } from 'meteor/webapp';
 
 /**
  * Seed data for MoviesCollection.
@@ -195,3 +197,7 @@ Meteor.startup(async () => {
   }
 });
 
+/**
+ * Connects Meteor with the Express app using WebApp.
+ */
+WebApp.connectHandlers.use(Meteor.bindEnvironment(app)); 
