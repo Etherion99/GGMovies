@@ -14,7 +14,7 @@ import { AddReview } from './components/reviews/AddReview/AddReview.jsx';
  * @returns {JSX.Element} The JSX element representing the main application.
  */
 export const App = () => {
-  //alert('Dale click al poster de alguna película para obtener más detalles');
+  alert('Dale click al poster de alguna película para obtener más detalles');
 
   const { editDialog, setEditDialog} = useCrud();
 
