@@ -222,3 +222,5 @@ This API was developed in Express and is documented in [Postman](./docs/Movies.p
 * The first time you run the Meteor application, the database will be automatically populated with test data. To repopulate it, it is necessary to delete the Mongo DB and rerun the project (you can view the Mongo URL with the command `meteor mongo --url`).
 
 * Due to time constraints, the Express API is summarized to the movie model only but has validation using schemas with Joi.
+
+* The UI has a responsive design
