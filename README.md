@@ -209,7 +209,7 @@ This API was developed in Express and is documented in [Postman](./docs/Movies.p
 * The application (including Meteor and Express) was deployed together on an AWS machine [here](https://sebastian-trujillo.me/ggmovies).
 
 * The application has both an API and a React interface sufficient for testing basic CRUD operations with the following operations:
-  * List movies
+  * List movies (the movies are returned in creation date descending order)
   * List platforms
   * Add movies
   * Delete movies (a deletion confirmation modal is missing due to time constraints)
