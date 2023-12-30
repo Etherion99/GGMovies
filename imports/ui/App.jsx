@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MovieGrid } from './components/movies/MovieGrid/MovieGrid.jsx';
 // primereact styles
 import 'primereact/resources/themes/lara-dark-blue/theme.css';
@@ -14,7 +14,13 @@ import { AddReview } from './components/reviews/AddReview/AddReview.jsx';
  * @returns {JSX.Element} The JSX element representing the main application.
  */
 export const App = () => {
-  alert('Dale click al poster de alguna película para obtener más detalles');
+
+  useEffect(() => {
+
+    alert('Dale click al poster de alguna película para obtener más detalles');
+
+  }, [])
+
 
   const { editDialog, setEditDialog} = useCrud();
 
